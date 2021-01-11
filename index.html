@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://fonts.google.com/specimen/Raleway">
+  <title>Frontend Mentor | Fylo data storage component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *,
+        *::after,
+        *::before{
+        box-sizing: border-box;
+        margin: 0%;
+        padding: 0%;
+    }
+
+   
+
+
+
+    html{
+      background:  hsl(229, 57%, 11%);
+      
+    }
+    
+    
+    body{
+      min-height: 100vh;
+      background-image: url(./images/bg-desktop.png);
+      background-repeat: no-repeat;
+      background-position: bottom;
+      font-family:"Relaway";
+      Font-size: 14px;
+     }  
+     
+
+    
+   
+    .container{
+      display: flex;
+      flex-direction: column;
+     /**background: white;*/
+     min-height: 100vh;
+     padding-top: 250px;
+     
+    }
+
+    .posicion{
+      display: flex;
+      align-self: center;
+      width: 100%;
+      justify-content:space-evenly ;
+      align-items: baseline;
+    }
+    .item{
+      background-color: hsl(228, 56%, 26%);
+       margin: -200px;
+       
+       }
+       .logo{
+         align-items: center;
+       }
+       .iconos{
+         display: inline-flex;
+        }
+       .iconos img{
+        
+         background-color: black;
+        padding: 10px;
+         border: 3px solid hsl(228, 56%, 26%);
+         height: 50px;
+         width: 50px;
+         border-radius: 10px;
+        
+       }
+       .item-medida1{
+         width: 300px;
+         height: 200px;
+         border-radius:10px 100px 10px  10px  ;
+         padding-top: 50px;
+         padding-left: 25px;
+       }
+       .item-medida2{
+         width: 420px;
+         height: 150px;
+         border-radius:20px;
+         padding-top: 25px;
+         padding-left: 25px;
+         color: white;
+        }
+        .medidores{
+          display: inline-flex;
+          width: 100%;
+          justify-content:space-between;
+          padding-left:1px;
+          padding-right: 30px;
+        }
+        .medidor{
+          color: white; /*propiedades de las letras*/
+        }
+        .barra_medidor{
+          width: 360px;
+          height: 12px;
+          padding-bottom: 5px;
+          background: hsl(229, 57%, 11%);
+          border-radius: 5px;
+        }
+        .barra_medidor_degrade{
+          width: 75%;
+          background:linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+          height: 12px;
+          border-radius: 5px;
+          padding-bottom: 5px;
+          border:1px solid black;
+          display: flex;
+          flex-direction: row-reverse;
+        }
+        .punta_medidor{
+          width: 10px;
+          height: 10px;
+          background: white;
+          border-radius: 5px;
+          border: 1px solid white;
+          
+
+        }
+
+        /*TOOL TIP TEXT*/
+        .tooltip{
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+    }
+    .tooltip .tooltiptext{
+        visibility: visible;
+        width: 120px;
+        background-color:white;
+        color: black;
+        text-align: center;
+        border-radius: 6px 6px 0px 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 150%;
+        left: 50%;
+        margin-left: 239px;
+        margin-bottom: 90px;
+    }
+    .tooltip .tooltiptext::after{ /*aqui viene la flecha*/
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 58%;
+        /*este codigo hace la flecha*/
+        width: 50px;
+        height: 0px;
+        border-left: 50px solid transparent;
+        border-top: 20px solid white;
+        
+        
+        
+    }
+    .tooltip:hover .tooltiptext{
+        visibility: visible;
+    }
+
+        /*FIN DE TOOLTIP*/
+      strong{
+        font-size: 25px;
+      }
+        
+
+        @media (max-width: 375px) {
+        
+    
+          body{
+              min-height: 100vh;
+              background-image: url(./images/bg-mobile.png);
+              background-repeat: no-repeat;
+            }
+            .container{
+            min-height: 100vh;
+            padding-top: 75px;
+            }
+           .posicion_movile{
+              display: flex;
+              flex-flow: row wrap;
+           }
+              
+              
+            .item{
+                flex: 0 0 80%;
+                 margin:10px;
+            }
+            .barra_medidor{
+            width: 230px;
+          
+            }
+            .item-medida2{
+            width: 360px;
+            }
+
+            .tooltip .tooltiptext{
+            visibility: visible;
+            width: 120px;
+            height: 60px;
+            background-color:white;
+            color: black;
+            text-align: center;
+            border-radius: 6px 6px 6px 6px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 150%;
+            left: 50%;
+            width: 0;
+            margin-left: 50px;
+            margin-bottom: -80px;
+            padding-top: 10px;
+           }
+            .tooltip .tooltiptext::after{ /*aqui viene la flecha*/
+             display: none
+              /*fin del codigo*/
+            }
+             
+             
+            
+        }
+    
+       
+    
+    
+
+    .attribution { font-size: 11px; text-align: center; display: none; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+<section>
+<div class="container container_movile">
+    <div class="posicion posicion_movile ">  
+            <div class="item item-medida1 ">
+                <div class="logo">
+                  <img src="./images/logo.svg" alt="">
+                </div>
+                <br>
+                <div class="iconos">
+                  <div><img src="./images/icon-document.svg" alt=""></div> 
+                  <div><img src="./images/icon-folder.svg" alt=""></div>
+                  <div><img src="./images/icon-upload.svg" alt=""></div>
+                  
+                </div>
+            </div>
+              
+            <div class="item item-medida2">
+              <br>
+                <p>You’ve used <strong> 815 GB</strong> of your storage </p> 
+                <br>
+                <div class="barra_medidor">
+                  <div class="barra_medidor_degrade">
+                    <div class="punta_medidor"></div>
+                  </div>
+                </div>
+                <!--185 GB Left-->
+                <div class="tooltip">
+                  <span class="tooltiptext"> <strong>185</strong>  GB Left</span>
+              </div>
+                  <br>   
+                  
+                      <div class="medidores">
+                        <div class="medidor">
+                            0 GB
+                        </div> 
+                        
+                        <div class="medidor ">
+                          1000 GB
+                        </div> 
+                        
+                      </div>
+
+                  
+                    
+            </div>
+    </div>
+  </div>
+
+</section>
+  
+  <footer>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  </footer>
+</body>
+</html>
